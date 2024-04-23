@@ -1,0 +1,465 @@
+---
+title: "Innovations in Educational Research Using Large Language Models (LLMs)"
+subtitle: "*Enhancing Qualitative Analysis and Addressing Data Imbalances*"
+
+format: 
+  revealjs:
+    multiplex: false
+    theme: [default, css/index.scss]
+    slide-number: c/t
+    incremental: true
+    title-slide-attributes:
+      data-background-image: img/title_2.jpg
+      data-background-size: cover 
+    footer: "[go.ncsu.edu/llms-cafe](https://www.go.ncsu.edu/llms-cafe)"
+editor: visual
+---
+
+## Challenges in Education Research {background-image="img/background.jpg"}
+
+::: columns
+::: {.column width="40%"}
+<br />
+
+::: fragment
+### **Qualitative**
+
+-   Qualitative Coding and Analysis
+-   Data Saturation and Analysis Depth
+:::
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+<br />
+
+::: fragment
+### **Quantitative**
+
+-   Handling Imbalanced Datasets
+-   Predictive Analytics and Student Performance
+-   Scaling and Automating Data Collection
+:::
+:::
+:::
+
+::: notes
+**Qualitative** - 1. Manual qualitative coding is time-consuming and often subject to coder bias or variability.
+
+-   
+
+    2.  achieving data saturation ensures the robustness and comprehensiveness of the qualitative analysis, affirming that the research findings are well-grounded in the data and that the developed themes are fully explored. However, it can be daunting, as it requires extensive data collection and interpretation until no new information emerges.
+
+-   
+
+    3.  Qualitative research that gathers data in multiple languages often faces hurdles in translation and maintaining the nuances of responses.
+
+**Quantitative** -
+
+1.  In educational research, certain populations or phenomena might be underrepresented in datasets, leading to biased predictions and analyses.
+
+-   
+
+    2.  Predicting student performance and outcomes traditionally relies on static or limited datasets, which may not effectively capture the complexity of student learning trajectories.
+
+-   
+
+    3.  Collecting large-scale quantitative data efficiently while ensuring the quality and reliability of the data can be challenging, especially in diverse educational settings.
+:::
+
+## What can help with these challenges {background-image="img/background.jpg"}
+
+![](img/ai_santa.jpg)
+
+## Placement of LLMs {background-image="img/background.jpg"}
+
+![](img/ai.png){.absolute .fragment top="100" left="120" width="650"}
+
+![](img/ml.png){.absolute .fragment top="100" left="120" width="650"}
+
+![](img/NLP-keep.png){.absolute .fragment top="100" left="120" width="650"}
+
+![](img/DL-keep.png){.absolute .fragment top="100" left="120" width="650"}
+
+![](img/genai-keep.png){.absolute .fragment top="100" left="120" width="650"}
+
+![](img/llm-keep.png){.absolute .fragment top="100" left="120" width="650"}
+
+::: notes
+-   Artificial intelligence or AI encompasses all technologies and methodologies that enable machines to mimic human intelligence and behavior.
+
+-   Machine learning or ML is a subset of AI, focuses on algorithms that allow computers to learn from and make decisions based on data.
+
+-   Natural Language Processing or NLP is a specific branch of AI and ML dedicated to giving computers the ability to understand, interpret, and respond to human language in a meaningful and useful way.
+
+-   Deep Learning, nested within ML (and pertinent to NLP), utilizes neural networks with multiple layers to learn from vast amounts of data, often driving the core capabilities of modern NLP.
+
+-   Generative AI, which often utilizes deep learning techniques, focuses on generating new content based on learned data patterns. It can be considered a part of NLP when the content generated is text.
+
+-   LLMs or large language models has advanced AI tools designed to understand, generate, and interact with human language using vast amounts of text data. LLMs as a specific implementation within Generative AI (and by extension NLP), focus on generating and understanding human-like text at scale.
+:::
+
+## Large Language Models {background-image="img/background.jpg"}
+
+> Are `pre-trained` and then `fine-tuned` for purposes to solve common language problems (Wei et al, 2022b).
+
+![](img/text_class.png){.absolute .fragment top="300" left="5" width="300"}
+
+![](img/text_gen.png){.absolute .fragment top="300" left="325" width="300"}
+
+![](img/text_summ.png){.absolute .fragment top="325" left="600" width="300"}
+
+![](img/ques_ans.png){.absolute .fragment top="325" left="850" width="300"}
+
+::: notes
+-   LLMs are sophisticated models like GPT (from OpenAI) and BERT (from Google) that leverage NLP techniques to perform tasks like text generation, comprehension, translation, and more.
+
+-   They do this by fine tuning for purposes to solve common language problems like:
+
+**Text Classification:** Text classification involves assigning categories or labels to textual data based on its content. IE: Classify open-ended student responses into categories such as "reflective," "descriptive," or "analytical" based on the content of their essays.
+
+**Text Generation:** Text generation is the process of automatically creating coherent text based on input prompts or data. IE: Using text generation to automatically create essay prompts or discussion questions that are tailored to the specific content of a course module.
+
+**Document Summarization:** Document summarization involves creating a concise and coherent summary of a longer document while retaining the key points and overall meaning. IE: This could be used by educational researchers to quickly summarize lengthy student essays or academic papers to streamline the grading and feedback process.
+
+**Question Answering:** Generate answers to questions posed by users, based on the information available in a given text or corpus. Researchers could develop a question answering system to provide students with instant feedback on inquiries about historical events or scientific concepts, drawing from a database of educational materials or textbooks.
+:::
+
+## Prompt Engineering (method) {background-image="img/background.jpg"}
+
+> Prompt Engineering is the skillful combination of art and science used to craft prompts that effectively draw specific responses from AI models (Akinwande et al., 2023, Augusto, 2023).
+
+![](img/PE_elements.png){width= 550px}
+
+<h4>
+
+[Prompt Exercise - click to try it 🔗](https://drive.google.com/file/d/1d9G7C3YIhluDhjfysglUJ-Ch5D5Tn2DV/view?usp=sharing){preview-link="auto"}
+
+::: notes
+A prompt contains any of the following elements:
+
+Instruction - a specific task or instruction you want the model to perform.
+
+Context - external information or additional context that can steer the model to better responses.
+
+Input Data - the input or question that we are interested to find a response for.
+
+Output Indicator - the type or format of the output.
+:::
+
+## Techniques of Prompt Engineering {background-image="img/background.jpg"}
+
+-   Few-Shot (Brown et al., 2023)
+-   In-context Learning (ICL) (Dong et al., 2023)
+-   Chain-of-Thought (COT) (Wei et al., 2022)
+-   Assertion Enhanced Few-Shot Learning (AEFL) (Shiariar et al., 2023).
+
+::: notes
+Brown asserts that Few-Shot (FS) is the term we will use in this work to refer to the setting where the model is given a few demonstrations of the task at inference time as conditioning.
+
+Few-shot learning refers to the ability of a machine learning model to learn a new task from a very small amount of training data---specifically, only a few examples (shots). The idea is to design models that can generalize from very limited data, somewhat like how humans can often learn new concepts with just a few examples. This method is contrasted with zero-shot learning, where no examples are provided, and many-shot learning, where many examples are used for training.
+
+Incontext Learning - The model uses the context given in the prompt to infer the task requirements and generate appropriate responses.
+
+Chain of thought Wei a language model is used in a way that mimics human problem-solving. When you use a language model with a chain of thought approach, you essentially guide the model through a sequence of logical steps to solve a problem.
+
+Shiariar et al. introduced a method called Assertion Enhanced Few-Shot Learning (AEFL), which is a technique designed to improve the performance of large language models (LLMs) when they are given very few examples to learn from. This approach involves embedding domain-specific assertions into the prompts given to the models. Let me break this down:
+:::
+
+## Two case studies {background-image="img/background.jpg"}
+
+::: columns
+::: {.column width="40%"}
+::: fragment
+**Qualitative**
+
+::: r-fit-text
+[STUDY 1]{.story} [`It's All About the Prompt: Deductive Coding's Role in AI vs. Human Performance.` 🔗](https://drive.google.com/file/d/1O99ZYAxYR_hHGDYvC7bVr-otIpvScuom/view?usp=sharing){preview-link="auto"}
+
+Jeanne McClure, Daria Smyslova, Amanda Hall & Shiyan Jiang
+
+<h3>RQ:</h3>
+
+How do large language models perform in deductive coding tasks in terms of accuracy, precision, and error patterns compared to human coders?
+:::
+:::
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+::: fragment
+**Quantitative**
+
+::: r-fit-text
+[STUDY 2]{.story} [`Leveraging Targeted Assertions in LLMs to Overcome Imbalances in Complex Educational Text Data.` 🔗](https://drive.google.com/file/d/1RaL3NX38L1zOIowtypZBicSvDUf0aLRH/view?usp=sharing){preview-link="auto"}
+
+Jeanne McClure, Machi Shimmei, Noboru Matsuda, Shiyan Jiang
+
+RQ: How do enhancements like prompt engineering (PE) and the integration of assertions improve the performance of large language models compared to traditional machine learning algorithms in addressing the challenges of imbalanced textual educational datasets?
+:::
+:::
+:::
+:::
+
+# [STUDY 1]{.story} [💬 Exploring the Efficacy of LLMs in Qualitative Data Analysis]{style="float:right;text-align:right;"} {background-color="#2596be"}
+
+------------------------------------------------------------------------
+
+### [STUDY 1]{.story} 💬 CONTEXT: Exploring the Efficacy of LLMs in Qualitative Data Analysis
+
+::: columns
+::: {.column width="40%"}
+::: fragment
+::: r-fit-text
+**METHODOLOGY:**
+
+`Prompt Techniques used`
+
+-   One-Shot/Few-Shot (Brown et al., 2020)
+-   In-context Learning (ICL) (Dong et al., 2023)
+-   Chain-of-Thought (COT) (Wei et al., 2022)
+
+`Participants`
+
+-   Two human coders and Open AI LLMs
+:::
+:::
+
+::: fragment
+::: r-fit-text
+`Experiments Conducted`
+
+-   "[Three experiments🔗](https://docs.google.com/document/d/1aKNw0rDXuPgLWN0eZ3FpgFCtufozZWixF6rS3L663Ug/edit?usp=sharing)" comparing the performance of human coders and LLMs.
+:::
+:::
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+::: fragment
+::: r-fit-text
+`Contextual Background:`
+
+-   The study investigates Cognitive Engagement (CE) in an AI curriculum at a High School, analyzing student responses across three modules.
+
+-   This mixed-method approach addresses both quantitative and qualitative aspects of coding, examining the depth and precision LLMs can offer in interpreting complex student responses.
+
+`Significance:`
+
+-   Demonstrates LLMs' potential in enhancing qualitative research methodologies.
+
+-   Explores strategic prompt engineering to maximize LLM performance.
+:::
+:::
+:::
+:::
+
+::: notes
+First Experiment: This initial phase featured a subset of data, and the task was structured with a streamlined Chain-of-Thought (COT) prompt. The experiment was designed to differentiate levels of cognitive engagement---Passive, Active, and Constructive---using simple categorization tasks.
+
+Second Experiment: This phase reintroduced the COT prompt but augmented it with Few-Shot learning examples. The task structure was tripartite, involving a question, a response, and a label, providing a more nuanced evaluation across the same cognitive engagement categories.
+
+Third Experiment: The final experiment retained elements from the previous two but incorporated a component from Assertion Enhanced Few-Shot Learning (AEFL) domain specific examples. This addition introduced a "Reasoning" component to the task, aiming to enhance the depth and accuracy of the LLM's coding by more closely mimicking human reasoning processes.
+:::
+
+## 💬 FINDINGS: Exploring the Efficacy of LLMs in Qualitative Data Analysis
+
+::: columns
+::: {.column width="40%"}
+::: fragment
+::: r-fit-text
+**FINDINGS:**
+
+::: box
+-   Zero shot and COT LLM outperfomed human coders
+-   COT with Few Shot improved LLM performance in minority class
+-   COT, Few Shot with domain specific reasoning improved LLM and Human coders
+:::
+:::
+:::
+:::
+
+::: {.column width="60%"}
+::: fragment
+::: r-fit-text
+![](img/accuracy_score.png){.absolute .fragment top="200" left="450" width="700"}
+:::
+:::
+:::
+:::
+
+::: notes
+LLMs consistently demonstrated superior precision and accuracy across various engagement categories,
+
+-   Experiment 1: LLMs showed higher precision than human coders, particularly effective in Passive and Active engagement categorization. LLMs utilize built-in knowledge and reasoning capabilities to make deductions, thus demonstrating the importance of the inherent design and capabilities of the model's architecture in prompt engineering. The results highlighted the foundational effectiveness of CoT prompting, setting a baseline for how LLMs can handle complex cognitive tasks in a raw format without task-specific tuning.
+
+-   Experiment 2: LLMs demonstrated significant improvements in accuracy, particularly excelling in Active engagement coding with enhanced precision. Enhanced the performance of LLMs significantly, showing better accuracy and handling of more complex coding tasks. Few-shot learning allowed the LLMs to leverage specific examples to better understand and classify the data, illustrating the effectiveness of providing contextual learning aids. The CoT component helped in structuring the reasoning process more clearly, which improved the LLM's ability to follow and apply logical steps in deductive coding
+
+-   Experiment 3: This experiment showed the highest level of performance among the three, with LLMs effectively using the combined strategies of AEFL and structured CoT to maximize precision and minimize errors. The AEFL technique, which incorporates domain-specific assertions, further refined the model's understanding and response accuracy, especially in more nuanced or ambiguous scenarios. This sophisticated prompt engineering approach demonstrated that well-designed prompts significantly boost LLM effectiveness, particularly in handling complex, imbalanced datasets typical in educational contexts.
+:::
+
+# [STUDY 2]{.story} [🔑 Overcoming Data Imbalances with LLMs in Educational Research]{style="float:right;text-align:right;"} {background-color="#2596be"}
+
+------------------------------------------------------------------------
+
+### [STUDY 2]{.story} 🔑 Overcoming Data Imbalances with LLMs {background-image="img/background.jpg"}
+
+::: columns
+::: {.column width="40%"}
+::: fragment
+::: r-fit-text
+**METHODOLOGY:**
+
+`Prompt Techniques used`
+
+-   In-context Learning (ICL)
+-   Chain-of-Thought (COT) (Wei et al., 2022)
+-   Assertion Enhanced Few-Shot Learning (AEFL) (Shiariar et al., 2023)
+
+`Data and Participants` - Analyzed responses from 28 students across varied demographics - Evaluated on the Training dataset from original study (*N*=135)
+:::
+:::
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+::: fragment
+::: r-fit-text
+`Context`
+
+-   Evaluate LLMS ability to automatically classify Cognitive Engagement from adapted CAP framework (Constructive - Active - Passive modes) compared to traditional Machine learning.
+
+![](img/assertion.png){.absolute .fragment top="300" left="550" width="550"}
+:::
+:::
+:::
+:::
+
+## 🔑 Overcoming Data Imbalances with LLMs {background-image="img/background.jpg"}
+
+::: columns
+::: {.column width="40%"}
+::: fragment
+::: r-fit-text
+**FINDINGS:**
+
+::: box
+-   Performance: LLMs excelled in minority classes, notably with a Constructive class F1 score of 32.
+-   Comparison: Outperformed traditional ML models, particularly in handling data imbalances.
+-   Assertions: Improved accuracy and reduced misclassifications by effectively addressing contextual complexities.
+:::
+:::
+:::
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+![](img/tble_compare.png){.absolute .fragment top="50" left="500" width="575"}
+
+![](img/precision2.png){.absolute .fragment top="375" left="500" width="575"}
+:::
+:::
+
+::: notes
+Experiment 1: This basic prompting helped establish a baseline understanding of how LLMs interpret and classify cognitive engagement from textual data, highlighting the initial benefits of structured reasoning in enhancing model accuracy.
+
+Experiment 2: The combination of Few-Shot Learning with Enhanced CoT Prompting significantly improved the LLM's ability to discern between different levels of cognitive engagement, reducing misclassification and demonstrating the impact of contextualized learning on model performance.
+
+Experiment 3: The integration of assertions allowed the LLM to handle ambiguities and nuances more effectively, showcasing a substantial improvement in precision and the ability to correctly interpret complex student responses.
+:::
+
+## LLMs in Education: Ethical Challenges and Future Directions {background-image="img/background.jpg"}
+
+::: columns
+::: {.column width="50%"}
+::: fragment
+<h3>Ethical challenges:</h3>
+
+-   **Hallucinations** (Wu et al., 2022).
+
+-   **Inconsistency** (Hase et al., 2021).
+
+-   **Specialization Needs**
+
+<h3>Future Directions:</h3>
+
+-   **Refining Prompt Design**
+
+-   **Real-time Tools**
+
+-   **Impact Assessments**
+:::
+:::
+
+::: {.column width="50%"}
+::: fragment
+<h3>Transformative Potential:</h3>
+
+-   **Empowering Educators**
+
+-   **Innovative Pedagogy**
+
+-   **Data Management**
+:::
+:::
+:::
+
+::: notes
+Hallucinations: LLMs may generate plausible but incorrect information. Inconsistency: Variability in output from similar prompts affects reliability. Specialization Needs: Accuracy requires tailored approaches for different educational fields.
+
+-   **Refining Prompt Design:** Enhancing precision and adapting to multilingual contexts to increase relevance and applicability.
+
+-   **Real-time Tools:** Developing interactive tools that offer personalized learning experiences.
+
+-   **Impact Assessments:** Conducting comprehensive studies to evaluate the long-term educational outcomes and address ethical considerations.
+
+Empowering Educators: Reducing routine tasks to focus on pedagogy. Innovative Pedagogy and Inclusive Education: Promoting dynamic teaching methods and ensuring fairness. Data Management: Improving handling of imbalanced datasets in education.
+
+**Conclusion:** The integration of LLMs into educational practices is not just about enhancing existing methods but transforming the educational landscape to foster a more interactive, personalized, and efficient learning environment. As we continue to refine these technologies and their applications, the potential for significant, positive change in education systems worldwide becomes increasingly tangible.
+:::
+
+## Acknowledgements {background-image="img/background.jpg"}
+
+::: r-fit-text
+> Thank you to my Advisor and Chair, *Shiyan Jiang*. Additionally, thank you to *Noboru Matsuda's* lab in Computer Science department, especially Machi Simmei, Daria Smyslova and Amanda Hall for their collaborations.
+
+<br /><br />
+
+> This material is based upon work supported by the National Science Foundation under Grant No. DRL-1949110. Any opinions, findings, conclusions, or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+:::
+
+## References {background-image="img/background.jpg"}
+
+::: r-fit-text
+<h4>
+
+Akinwande, V., Jiang, Y., Sam, D., & Kolter, J. Z. (2023). Understanding prompt engineering may not require rethinking generalization. arXiv preprint arXiv:2310.03957.
+
+Augusto C., P. (2023, April 20). The importance of prompt engineering in natural language systems. LinkedIn. https://www.linkedin.com/pulse/importance-prompt-engineering-natural-language-c-cardoso-r-/
+
+Brown, T., Mann, B., Ryder, N., Subbiah, M., Kaplan, J. D., Dhariwal, P., Neelakantan, A., et al. (2020). Language models are few-shot learners. In Advances in Neural Information Processing Systems 33 (pp. 1877--1901).
+
+Dong, Q., Li, L., Dai, D., Zheng, C., Wu, Z., Chang, B., ... & Sui, Z. (2022). A survey on in-context learning. arXiv preprint arXiv:2301.00234.
+
+Hase, P., Diab, M., Celikyilmaz, A., Li, X., Kozareva, Z., Stoyanov, V., ... & Iyer, S. (2021). Do language models have beliefs? methods for detecting, updating, and visualizing model beliefs. arXiv preprint arXiv:2111.13654.
+
+Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi, E., ... & Zhou, D. (2022a). Chain-of-thought prompting elicits reasoning in large language models. Advances in neural information processing systems, 35, 24824-24837.
+
+Wei, J., Tay, Y., Bommasani, R., Raffel, C., Zoph, B., Borgeaud, S., ... & Fedus, W. (2022b). Emergent abilities of large language models. arXiv preprint arXiv:2206.07682.
+
+Wu, T., Terry, M., & Cai, C. J. (2022, April). Ai chains: Transparent and controllable human-ai interaction by chaining large language model prompts. In Proceedings of the 2022 CHI conference on human factors in computing systems (pp. 1-22).
+
+Shahriar, T., Matsuda, N., & Ramos, K. (2023). Assertion Enhanced Few-Shot Learning: Instructive Technique for Large Language Models to Generate Educational Explanations. arXiv preprint arXiv:2312.03122.
+
+</h4>
+:::

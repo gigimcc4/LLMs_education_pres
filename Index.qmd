@@ -40,7 +40,6 @@ editor: visual
 
 -   Handling Imbalanced Datasets
 -   Predictive Analytics and Student Performance
--   Scaling and Automating Data Collection
 :::
 :::
 :::

@@ -431,7 +431,7 @@ Empowering Educators: Reducing routine tasks to focus on pedagogy. Innovative Pe
 ## Acknowledgements {background-image="img/background.jpg"}
 
 ::: r-fit-text
-> Thank you to my Advisor and Chair, *Shiyan Jiang*. Additionally, thank you to *Noboru Matsuda's* lab in Computer Science department, especially Machi Simmei, Daria Smyslova and Amanda Hall for their collaborations.
+> Thank you to my Advisor and Chair, *Shiyan Jiang*. Additionally, thank you to *Noboru Matsuda's* lab in Computer Science department and Tasmia Shairiar. A special thanks to Machi Simmei, Daria Smyslova and Amanda Hall for their collaborations on our papers.
 
 <br /><br />
 
